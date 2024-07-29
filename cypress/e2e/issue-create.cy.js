@@ -1,4 +1,4 @@
-describe('Issue create', () => {
+describe('Issue create, Veiko Veinberg', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.url()
