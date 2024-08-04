@@ -180,12 +180,9 @@ it.only("Should create a new issue using the random data plugin", () => {
     cy.get('[data-testid="select-option:Task"]').click();
     cy.get('[data-testid="icon:task"]').should("be.visible");
 
-    // Select priority "Low"
     selectpriorityLow();
-    // Select reporter "Baby Yoda"
     selectreporterBabyYoda();
 
-    // Click on "Create issue"
     cy.get('button[type="submit"]').click();
   });
 
