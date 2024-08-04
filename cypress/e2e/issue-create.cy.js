@@ -197,7 +197,6 @@ it.only("Should create a new issue using the random data plugin", () => {
   cy.reload();
   cy.contains("Issue has been successfully created.").should("not.exist");
 
-  // Verify that the new issue is displayed on the board
   cy.get('[data-testid="board-list:backlog"]')
     .should("be.visible")
     .within(() => {
