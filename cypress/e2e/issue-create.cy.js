@@ -24,16 +24,14 @@ function selectpriorityLow() {
   cy.get('[data-testid="select:priority"]').click();
   cy.get('[data-testid="select-option:Low"]').click();
 }
-describe("Issue create", () => {
-  beforeEach(() => {
-    cy.visit("/");
-    cy.url()
-      .should("eq", `${Cypress.env("baseUrl")}project/board`)
-      .then((url) => {
-        // System will already open issue creating modal in beforeEach block
-        cy.visit(url + "/board?modal-issue-create=true");
-      });
-  });
+beforeEach(() => {
+  cy.visit("/");
+  cy.url()
+    .should("eq", `${Cypress.env("baseUrl")}project`)
+    .then((url) => {
+      cy.visit(url + "/board");
+      cy.contains("This is an issue of type: Task.").click();
+    });
 });
 
 it("Should create an issue and validate it successfully", () => {
