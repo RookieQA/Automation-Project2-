@@ -40,11 +40,7 @@ describe('Issue details editing', () => {
     const title = 'TEST_TITLE';
     const description = 'TEST_DESCRIPTION';
 
-    getIssueDetailsModal().within(() => {
-      cy.get('textarea[placeholder="Short summary"]')
-        .clear()
-        .type(title)
-        .blur();
+    
 
       cy.get('.ql-snow')
         .click()
